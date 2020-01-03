@@ -543,7 +543,7 @@ bot.on('message', async message => {
         remainingErrorNumber = "This user is due for a promotion.";
       }
 
-      var remainingError = `**${remainingErrorNumber}** ${xpName} remaining for **${nextRankName} (${requiredXP} ${xpName})**`
+      var remainingError = `${xpName} remaining for **${nextRankName} (${requiredXP} ${xpName})** **${remainingErrorNumber}**`
 
 
       var response = new Discord.RichEmbed()
