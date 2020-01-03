@@ -556,7 +556,7 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}commands`)){
-    var first = new Discord.RichEmbed()
+    var response = new Discord.RichEmbed()
       .setColor(0x1279ff)
       .setTitle(`__Member Commands__`)
       .setDescription(`The following commands can be ran by: *everyone*.`)
