@@ -9,7 +9,7 @@ const maxXP = 10;
 const xpAuditLogChannelID = "638525002907516938";
 const mainChatChannelID = "631354199053041677";
 const fireBaseURL = process.env.fireBaseURL;
-const xpName = "Valor";
+const xpName = "xp";
 /* SETTINGS END */
 
 /* PACKAGES START */
@@ -34,7 +34,7 @@ firebase.initializeApp(firebaseConfig)
 
 bot.on('ready', () => {
   console.log('Turned on Discord bot');
-  bot.user.setActivity(`${bot.users.size} Republic Clones!`, { type: 'WATCHING' });
+  bot.user.setActivity(`${bot.users.size} comrades!`, { type: 'WATCHING' });
   bot.channels.get(bot.channels.get(`${mainChatChannelID}`).id).send(`**Resuming processes!** :wave:`)
 })
 
@@ -486,7 +486,7 @@ bot.on('message', async message => {
             nextRankNumber = body.roles[i+1].rank
             nextRankName = body.roles[i+1].name
             var {body} = await snekfetch.get(`${fireBaseURL}/xpData/users/${userID}.json`)
-            currentRankAndPoints = `**${currentRankName} - (${body.xpValue} ${xpName})**`
+            currentRankAndPoints = `**${currentRankName} - Currently has ${body.xpValue} ${xpName}**`
             var {body} = await snekfetch.get(`${fireBaseURL}/roles/${nextRankNumber}.json`)
             requiredXP = body.requiredXP
             break
@@ -495,15 +495,16 @@ bot.on('message', async message => {
       }else if (currentRankID === 255){
         currentRankName = await rbx.getRankNameInGroup(groupID, userID)
         var {body} = await snekfetch.get(`${fireBaseURL}/xpData/users/${userID}.json`)
-        currentRankAndPoints = `**${currentRankName} - (${body.xpValue} ${xpName})**`
+        currentRankAndPoints = `**${currentRankName} - Currently has ${body.xpValue} ${xpName}**`
         requiredXP = 0
         nextRankName = "??"
       }else{
         currentRankName = "Guest"
-        currentRankAndPoints = `**${currentRankName} - (0 ${xpName})**`
+        currentRankAndPoints = `**${currentRankName} - Currently has 0 ${xpName}**`
         requiredXP = 0
         nextRankName = `[Join Group](https://www.roblox.com/groups/${groupID})`
       }
+
 
 
       var percentAge = Math.round(((Number(currentXP))/Number(requiredXP)) * 100)
@@ -540,7 +541,7 @@ bot.on('message', async message => {
       }
       var remainingErrorNumber = Number(requiredXP-Number(currentXP))
       if ((remainingErrorNumber < 0) || (remainingErrorNumber === 0)){
-        remainingErrorNumber = "This user is due for a promotion.";
+        remainingErrorNumber = "Due 4 Promotion";
       }
 
       var remainingError = `**${remainingErrorNumber}** ${xpName} remaining for **${nextRankName} (${requiredXP} ${xpName})**`
@@ -550,7 +551,7 @@ bot.on('message', async message => {
         .setColor(0x45ff9f)
         .setThumbnail(`${mugShot}`)
         .setDescription(`${usernameHeader}\n${currentRankAndPoints}\n${percentBar} ${percentAge}%\n${remainingError}`)
-      return message.reply(response).then(message => message.delete(100000))
+      return message.reply(response).then(message => message.delete(30000))
     }
 
   }
