@@ -506,7 +506,6 @@ bot.on('message', async message => {
       }
 
 
-
       var percentAge = Math.round(((Number(currentXP))/Number(requiredXP)) * 100)
       if (Number.isNaN(percentAge)){
         percentAge = 0
@@ -517,27 +516,27 @@ bot.on('message', async message => {
 
       var percentBar;
       if (percentAge === 0){
-        percentBar = ":white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
       }else if (0 <= percentAge && percentAge <= 10){
-        percentBar = ":white_large_square: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
       }else if (10 <= percentAge && percentAge <= 20){
-        percentBar = ":white_large_square: :white_large_square: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
       }else if (20 <= percentAge && percentAge <= 30){
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
       }else if (30 <= percentAge && percentAge <= 40){
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
       }else if (40 <= percentAge && percentAge <= 50){
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_square_button: :white_square_button: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
       }else if (50 <= percentAge && percentAge <= 60){
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_square_button: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
       }else if (60 <= percentAge && percentAge <= 70){
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_square_button: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :black_large_square: :black_large_square: :black_large_square:"
       }else if (70 <= percentAge && percentAge <= 80){
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_square_button: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :black_large_square: :black_large_square:"
       }else if (80 <= percentAge && percentAge <= 90){
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_square_button:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :black_large_square:"
       }else{
-        percentBar = ":white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square: :white_large_square:"
+        percentBar = ":ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check: :ballot_box_with_check:"
       }
       var remainingErrorNumber = Number(requiredXP-Number(currentXP))
       if ((remainingErrorNumber < 0) || (remainingErrorNumber === 0)){
