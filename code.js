@@ -9,7 +9,7 @@ const maxXP = 10;
 const xpAuditLogChannelID = "638525002907516938";
 const mainChatChannelID = "631354199053041677";
 const fireBaseURL = process.env.fireBaseURL;
-const xpName = "xp";
+const xpName = "Valor";
 /* SETTINGS END */
 
 /* PACKAGES START */
@@ -551,7 +551,7 @@ bot.on('message', async message => {
         .setColor(0x45ff9f)
         .setThumbnail(`${mugShot}`)
         .setDescription(`${usernameHeader}\n${currentRankAndPoints}\n${percentBar} ${percentAge}%\n${remainingError}`)
-      return message.reply(response).then(message => message.delete(30000))
+      return message.reply(response).then(message => message.delete(100000))
     }
 
   }
