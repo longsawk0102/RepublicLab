@@ -486,7 +486,7 @@ bot.on('message', async message => {
             nextRankNumber = body.roles[i+1].rank
             nextRankName = body.roles[i+1].name
             var {body} = await snekfetch.get(`${fireBaseURL}/xpData/users/${userID}.json`)
-            currentRankAndPoints = `**${currentRankName} - Currently has ${body.xpValue} ${xpName}**`
+            currentRankAndPoints = `**${currentRankName} - (${body.xpValue} ${xpName})**`
             var {body} = await snekfetch.get(`${fireBaseURL}/roles/${nextRankNumber}.json`)
             requiredXP = body.requiredXP
             break
@@ -495,12 +495,12 @@ bot.on('message', async message => {
       }else if (currentRankID === 255){
         currentRankName = await rbx.getRankNameInGroup(groupID, userID)
         var {body} = await snekfetch.get(`${fireBaseURL}/xpData/users/${userID}.json`)
-        currentRankAndPoints = `**${currentRankName} - Currently has ${body.xpValue} ${xpName}**`
+        currentRankAndPoints = `**${currentRankName} - (${body.xpValue} ${xpName})**`
         requiredXP = 0
         nextRankName = "??"
       }else{
         currentRankName = "Guest"
-        currentRankAndPoints = `**${currentRankName} - Currently has 0 ${xpName}**`
+        currentRankAndPoints = `**${currentRankName} - (0 ${xpName})**`
         requiredXP = 0
         nextRankName = `[Join Group](https://www.roblox.com/groups/${groupID})`
       }
