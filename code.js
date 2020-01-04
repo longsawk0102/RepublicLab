@@ -9,7 +9,7 @@ const maxXP = 10;
 const xpAuditLogChannelID = "638525002907516938";
 const mainChatChannelID = "631354199053041677";
 const fireBaseURL = process.env.fireBaseURL;
-const xpName = "xp";
+const xpName = "Valor";
 /* SETTINGS END */
 
 /* PACKAGES START */
