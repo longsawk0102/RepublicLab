@@ -9,7 +9,7 @@ const maxXP = 10;
 const xpAuditLogChannelID = "638525002907516938";
 const mainChatChannelID = "631354199053041677";
 const fireBaseURL = process.env.fireBaseURL;
-const xpName = "Valor";
+const xpName = "xp";
 /* SETTINGS END */
 
 /* PACKAGES START */
@@ -35,7 +35,7 @@ firebase.initializeApp(firebaseConfig)
 bot.on('ready', () => {
   console.log('Turned on Discord bot');
   bot.user.setActivity(`${bot.users.size} Republic Clones! | r! `, { type: 'WATCHING' });
-  bot.channels.get(bot.channels.get(`${mainChatChannelID}`).id).send(`**Resuming processes!** :wave:`)
+  bot.channels.get(bot.channels.get(`${mainChatChannelID}`).id).send(`**Republic Labs was shut down successfully! The new update is ready.** :thumbsup:`)
 })
 
 bot.on('message', async message => {
@@ -544,7 +544,7 @@ bot.on('message', async message => {
         remainingErrorNumber = "This user is due for a promotion.";
       }
 
-      var remainingError = `0 ${xpName} remaining for **${nextRankName} (${requiredXP} ${xpName}) {remainingErrorNumber}**`
+      var remainingError = `0 ${xpName} remaining for **${nextRankName} (${requiredXP} ${xpName})** **{remainingErrorNumber}**`
 
 
       var response = new Discord.RichEmbed()
