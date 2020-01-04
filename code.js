@@ -558,7 +558,7 @@ bot.on('message', async message => {
 
   if (message.content.toLowerCase().startsWith(`${prefix}commands`)){
     var first = new Discord.RichEmbed()
-      .setColor(0x1279ff)
+      .setColor(0x00ffff)
       .setTitle(`__Member Commands__`)
       .setDescription(`The following commands can be ran by: *everyone*.`)
       .addField(`**\`${prefix}verify\`**`, `Associates a user's ROBLOX account with their Discord account through verification procedures.`)
