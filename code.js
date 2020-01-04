@@ -568,7 +568,8 @@ bot.on('message', async message => {
       .addField(`**\`${prefix}${xpName} add 1 username1, username2, username3, etc\`**`, `Adds 1 ${xpName} to the usernames provided (\`username1, username2, username3, etc\`).`)
       .addField(`**\`${prefix}${xpName} remove 1 username1, username2, username3, etc\`**`, `Removes 1 ${xpName} to the usernames provided (\`username1, username2, username3, etc\`).`)
       .addField(`**\`${prefix}setup\`**`, `Sets up the guild with all of the information found in the config.json file (./settings/config.json).`)
-    await message.channel.send(embed)
+    await message.channel.send(first)
+    return undefined;
     
   }
 
