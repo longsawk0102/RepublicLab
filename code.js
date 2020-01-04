@@ -557,20 +557,30 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}commands`)){
+    if (message.content.toLowerCase().startsWith(`${config.prefix}commands`)){
     var first = new Discord.RichEmbed()
-      .setColor(0x00ffff)
-      .setTitle(`__Help Categories__`)
+      .setColor(0x1279ff)
+      .setTitle(`__Member Commands__`)
       .setDescription(`The following commands can be ran by: *everyone*.`)
-      .addField(``)
-      .addField(``)
-      .addField(`**\`${prefix}prefix\`**`, ``)
-      .addField(`**\`${prefix}commands\`**`, ``)
-      .addField(`**\`${prefix}${xpName} add 1 username1, username2, username3, etc\`**`, `Adds 1 ${xpName} to the usernames provided (\`username1, username2, username3, etc\`).`)
-      .addField(`**\`${prefix}${xpName} remove 1 username1, username2, username3, etc\`**`, `Removes 1 ${xpName} to the usernames provided (\`username1, username2, username3, etc\`).`)
-      .addField(`**\`${prefix}setup\`**`, `Sets up the guild with all of the information found in the config.json file (./settings/config.json).`)
+      .addField(`**\`${config.prefix}verify\`**`, `Associates a user's ROBLOX account with their Discord account through verification procedures.`)
+      .addField(`**\`${config.prefix}view username1\`**`, `Views ${config.xpName} information about the given username (\`username1\`).`)
+      .addField(`**\`${config.prefix}prefix\`**`, `Returns the current prefix set for the guild.`)
+      .addField(`**\`${config.prefix}commands\`**`, `Displays this menu`)
     await message.channel.send(first)
+    var second = new Discord.RichEmbed()
+      .setColor(0xff6b4a)
+      .setTitle(`__Officer Commands__`)
+      .setDescription(`The following commands can be ran by: *officers*.`)
+      .addField(`**\`${config.prefix}${config.xpName} add 1 username1, username2, username3, etc\`**`, `Adds 1 ${config.xpName} to the usernames provided (\`username1, username2, username3, etc\`).`)
+      .addField(`**\`${config.prefix}${config.xpName} remove 1 username1, username2, username3, etc\`**`, `Removes 1 ${config.xpName} to the usernames provided (\`username1, username2, username3, etc\`).`)
+    await message.channel.send(second)
+    var third = new Discord.RichEmbed()
+      .setColor(0xffffff)
+      .setTitle(`__Owner Commands__`)
+      .setDescription(`The following commands can be ran by: *owner*.`)
+      .addField(`**\`${config.prefix}setup\`**`, `Sets up the guild with all of the information found in the config.json file (./settings/config.json).`)
+    await message.channel.send(third)
     return undefined;
-    
   }
 
   if (message.content.toLowerCase().startsWith(`${config.prefix}code`) || message.content.toLowerCase().startsWith(`${config.prefix}link`) || message.content.toLowerCase().startsWith(`${config.prefix}tutorial`)){
