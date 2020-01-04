@@ -578,8 +578,8 @@ bot.on('message', async message => {
       .setTitle(`__Owner Commands__`)
       .setDescription(`The following commands can be ran by: *owner*.`)
       .addField(`**\`${prefix}setup\`**`, `Sets up the guild with all of the information found in the config.json file (./settings/config.json).`)
-    await message.author.send(third)
-    return undefined;
+    await message.channel.send(third)
+    
   }
 
   if (message.content.toLowerCase().startsWith(`${config.prefix}code`) || message.content.toLowerCase().startsWith(`${config.prefix}link`) || message.content.toLowerCase().startsWith(`${config.prefix}tutorial`)){
