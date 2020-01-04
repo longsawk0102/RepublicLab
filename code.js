@@ -541,10 +541,10 @@ bot.on('message', async message => {
       }
       var remainingErrorNumber = Number(requiredXP-Number(currentXP))
       if ((remainingErrorNumber < 0) || (remainingErrorNumber === 0)){
-        remainingErrorNumber = "Due 4 Promotion";
+        remainingErrorNumber = "This user is due for a promotion.";
       }
 
-      var remainingError = `**${remainingErrorNumber}** ${xpName} remaining for **${nextRankName} (${requiredXP} ${xpName})**`
+      var remainingError = `0 ${xpName} remaining for **${nextRankName} (${requiredXP} ${xpName}) {remainingErrorNumber}**`
 
 
       var response = new Discord.RichEmbed()
