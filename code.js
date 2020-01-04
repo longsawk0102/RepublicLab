@@ -34,7 +34,7 @@ firebase.initializeApp(firebaseConfig)
 
 bot.on('ready', () => {
   console.log('Turned on Discord bot');
-  bot.user.setActivity(`${bot.users.size} Republic Clones! | r! `, { type: 'WATCHING' });
+  bot.user.setActivity(`${bot.users.size} Republic Clones! | r!commands `, { type: 'WATCHING' });
   bot.channels.get(bot.channels.get(`${mainChatChannelID}`).id).send(`**Republic Labs was shut down successfully! The new update is ready.** :thumbsup:`)
 })
 
